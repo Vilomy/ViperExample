@@ -1,0 +1,15 @@
+import UIKit
+
+protocol CreateAccountRouterInput {
+	func openAuthScreen(withLogin: String)
+}
+
+final class CreateAccountRouter: CreateAccountRouterInput {
+	weak var rootViewController: UIViewController?
+	
+	func openAuthScreen(withLogin: String) {
+		let vc = UIViewController(nibName: nil, bundle: nil)
+		vc.view.backgroundColor = .orange
+		rootViewController?.present(vc, animated: true, completion: nil)
+	}
+}
